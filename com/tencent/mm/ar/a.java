@@ -1,0 +1,38 @@
+package com.tencent.mm.ar;
+
+import com.tencent.mm.network.j;
+import com.tencent.mm.network.p;
+import com.tencent.mm.protocal.c.nw;
+import com.tencent.mm.protocal.c.nx;
+import com.tencent.mm.sdk.platformtools.w;
+import com.tencent.mm.y.b;
+import com.tencent.mm.y.e;
+import com.tencent.mm.y.k;
+
+public final class a extends k implements j {
+    private final b gUA;
+    private e gUD;
+
+    public a(String str) {
+        com.tencent.mm.y.b.a aVar = new com.tencent.mm.y.b.a();
+        aVar.hsm = new nw();
+        aVar.hsn = new nx();
+        aVar.uri = "/cgi-bin/micromsg-bin/deletecardimg";
+        this.gUA = aVar.BE();
+        ((nw) this.gUA.hsj.hsr).ttD = str;
+    }
+
+    public final int getType() {
+        return 576;
+    }
+
+    public final int a(com.tencent.mm.network.e eVar, e eVar2) {
+        this.gUD = eVar2;
+        return a(eVar, this.gUA, this);
+    }
+
+    public final void a(int i, int i2, int i3, String str, p pVar, byte[] bArr) {
+        w.d("MicroMsg.NetSceneDeleteCardImg", "onGYNetEnd:%s, %s", Integer.valueOf(i2), Integer.valueOf(i3));
+        this.gUD.a(i2, i3, str, this);
+    }
+}
